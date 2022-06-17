@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Unity.RemoteConfig;
+using Unity.Services.RemoteConfig;
 using UnityEngine;
 
 namespace UnityGamingServicesUseCases
@@ -30,7 +30,7 @@ namespace UnityGamingServicesUseCases
             {
                 try
                 {
-                    await ConfigManager.FetchConfigsAsync(new UserAttributes(), new AppAttributes());
+                    await RemoteConfigService.Instance.FetchConfigsAsync(new UserAttributes(), new AppAttributes());
 
                     // Check that scene has not been unloaded while processing async wait to prevent throw.
                     if (this == null) return;

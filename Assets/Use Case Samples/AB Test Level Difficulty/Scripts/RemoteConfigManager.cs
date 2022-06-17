@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Unity.RemoteConfig;
+using Unity.Services.RemoteConfig;
 using Unity.Services.Authentication;
 using UnityEngine;
 

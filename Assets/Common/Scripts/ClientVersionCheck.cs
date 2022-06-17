@@ -1,9 +1,9 @@
 using System;
 using System.Threading.Tasks;
-using Unity.RemoteConfig;
 using Unity.Services.Authentication;
 using Unity.Services.Core;
 using UnityEngine;
+using Unity.Services.RemoteConfig;
 
 namespace UnityGamingServicesUseCases
 {
@@ -45,7 +45,7 @@ namespace UnityGamingServicesUseCases
         {
             ConfigManager.SetCustomUserID(AuthenticationService.Instance.PlayerId);
 
-            await ConfigManager.FetchConfigsAsync(new UserAttributes(), new AppAttributes());
+            await RemoteConfigService.Instance.FetchConfigsAsync(new UserAttributes(), new AppAttributes());
 
             // Check that scene has not been unloaded while processing async wait to prevent throw.
             if (this == null) return;
